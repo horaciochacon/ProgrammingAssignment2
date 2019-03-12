@@ -1,12 +1,12 @@
 ## Programming Assignment 2: Lexical Scoping
 ## Creator: Horacio Chacón Torrico
-## This two functions together reads a matrix object and computes the 
+## These two functions together reads a matrix object and computes the 
 ## matrix inverse and stores the result. If executed again the CacheSolve
 ## function with no change, the cached inverse is displayed, otherwise
 ## a new solve() funcition with new input is processed
 
-
-## Write a short comment describing this function
+## This function reads a matrix object and return a list with 4 different
+## functions to set and get the matrix and to set and get the inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -17,16 +17,15 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x
   setInverse <- function(inverse) i <<- inverse
   getInverse <- function() i
-  list(set = set, get = get,
-       setInverse = setInverse,
-       getInverse = getInverse)
+  list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
-
-## Write a short comment describing this function
+## This function takes the instantiated MakeCacheMatrix function as input and
+## tries to calculate the inverse matrix to the previosly setted matrix in
+## the MakeCacheMatrix object. If inverse previously existed, cached result is 
+## displayed.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
   i <- x$getInverse()
   if(!is.null(i)) {
     message("Printing cached inverse matrix")
