@@ -1,7 +1,7 @@
 ## Programming Assignment 2: Lexical Scoping
 ## Creator: Horacio Chacón Torrico
-## These two functions together reads a matrix object and computes the 
-## matrix inverse and stores the result. If executed again the CacheSolve
+## These two functions together read a matrix object, computes the 
+## matrix inverse, display it and stores the result. If executed again the CacheSolve
 ## function with no change, the cached inverse is displayed, otherwise
 ## a new solve() funcition with new input is processed
 
